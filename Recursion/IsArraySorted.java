@@ -6,7 +6,7 @@ class isArraySorted {
         boolean result = isArrSorted(arr, 0);
         System.out.println("Is Array Sorted: " + result);
         
-        // using recursion
+        // using iteration
         // just loop linearly and check if i is smaller than i+1 otherwise break the loop
         // loop will go from 0 to arr.length-2;
     }
