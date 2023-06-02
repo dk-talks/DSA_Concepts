@@ -36,6 +36,21 @@ public class CircularQueue {
         size++;
         return true;
     }
+    
+    // to make it dynamic, create a new class which extends CicularQueue, call the super() class in their constructors and ovverride the insert method like so- 
+    @Override
+    public boolean insert(int item) throws Exception {
+        if(isFull()) {
+            int[] temp = new int[data.length * 2];
+            for(int i = 0; i<data.length; i++) {
+                temp[i] = data[(front+i) % data.length ];
+            }
+            front = 0;
+            last = data.length;
+            data = temp;
+        }
+        return super.insert(item);
+    }
 
     public int remove() throws Exception {
         if(isEmpty()) {
