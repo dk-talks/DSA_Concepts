@@ -1,0 +1,20 @@
+public class uniqueElementInArray {
+    public static void main(String[] args) {
+        int[] arr = {10,2,5,3,2,3,5};
+
+        // given an array with all elements with dual presence, find the element which is present only once
+        // only use bit manipulation to solve this
+        // as we know, XOR operation on same elements returns 0, so uisng XOR dual presented elements will be cnaceled out and only our answer will be remained
+
+        System.out.println("Answer element is: " + answer(arr));
+
+    }
+
+    public static int answer(int[] arr) {
+        int uniqueValue = 0;
+        for(int n: arr) {
+            uniqueValue = uniqueValue ^ n;
+        }
+        return uniqueValue;
+    }
+}
