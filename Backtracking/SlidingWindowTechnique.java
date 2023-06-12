@@ -32,8 +32,24 @@ public class SlidingWindow {
         }
         System.out.println("The max sum of k consecutive elements is: " + maxSum);
         // Time Complexity - O(k*n)
+        
+        // ----------------------------------------------Sliding Window Technique--------------------------------------------------------------------------
 
+         // Now trying it using Sliding window technique
 
+        // first find the reuslt of first window
+        int maxSum1 = 0;
+        for(int i = 0; i<k; i++) {
+            maxSum1 += arr[i];
+        }
+        // now we have the sum of first window
+        // Now in next windows, subtract previous element and add next element and check is it larger than largest sum.
+        int windowSum = maxSum1;
+        for(int i = k; i<n; i++) {
+            windowSum = windowSum + arr[i] - arr[i-k];
+            maxSum1 = Math.max(windowSum, maxSum1);
+        }
+        System.out.println("The largest sum using Sliding window technique is: " + maxSum1);
 
 
 
